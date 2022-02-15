@@ -1,0 +1,62 @@
+const { User, UserSchema } = require('./user.model');
+const { Referral, ReferralSchema } = require('./referral.model');
+const { Favorite, FavoriteSchema } = require('./favorite.model');
+const { Order, OrderSchema } = require('./order.model');
+const { Coupon, CouponSchema } = require('./coupon.model');
+const { Car, CarSchema } = require('./car.model');
+const { Ticket, TicketSchema } = require('./ticket.model');
+const { Ticket_img, Ticket_imgSchema } = require('./ticket_img.model');
+const { Address, AddressSchema } = require('./address.model');
+const { Product, ProductSchema } = require('./product.model');
+const { Product_img, Product_imgSchema } = require('./product_img.model');
+const { Model_car, Model_carSchema } = require('./model_car.model');
+const { Reason, ReasonSchema } = require('./reason.model');
+const { Reply, ReplySchema } = require('./reply.model');
+const { Region, RegionSchema } = require('./region.model');
+const { Commune, CommuneSchema } = require('./commune.model');
+const { Family, FamilySchema } = require('./family.model');
+const { Category, CategorySchema } = require('./category.model');
+const { Menu, MenuSchema } = require('./menu.model');
+const { Slider, SliderSchema } = require('./slider.model');
+
+function setupModels(sequelize) {
+  Referral.init(ReferralSchema, Referral.config(sequelize));
+  Favorite.init(FavoriteSchema, Favorite.config(sequelize));
+  Order.init(OrderSchema, Order.config(sequelize));
+  Coupon.init(CouponSchema, Coupon.config(sequelize));
+  Car.init(CarSchema, Car.config(sequelize));
+  Ticket.init(TicketSchema, Ticket.config(sequelize));
+  Ticket_img.init(Ticket_imgSchema, Ticket_img.config(sequelize));
+  Address.init(AddressSchema, Address.config(sequelize));
+  User.init(UserSchema, User.config(sequelize));
+  Product.init(ProductSchema, Product.config(sequelize));
+  Product_img.init(Product_imgSchema, Product_img.config(sequelize));
+  Model_car.init(Model_carSchema, Model_car.config(sequelize));
+  Reason.init(ReasonSchema, Reason.config(sequelize));
+  Reply.init(ReplySchema, Reply.config(sequelize));
+  Region.init(RegionSchema, Region.config(sequelize));
+  Commune.init(CommuneSchema, Commune.config(sequelize));
+  Family.init(FamilySchema, Family.config(sequelize));
+  Category.init(CategorySchema, Category.config(sequelize));
+  Menu.init(MenuSchema, Menu.config(sequelize));
+  Slider.init(SliderSchema, Slider.config(sequelize));
+
+  User.associate(sequelize.models);
+  Referral.associate(sequelize.models);
+  Order.associate(sequelize.models);
+  Coupon.associate(sequelize.models);
+  Ticket.associate(sequelize.models);
+  Ticket_img.associate(sequelize.models);
+  Address.associate(sequelize.models);
+  Product.associate(sequelize.models);
+  Product_img.associate(sequelize.models);
+  Model_car.associate(sequelize.models);
+  Reason.associate(sequelize.models);
+  Reply.associate(sequelize.models);
+  Region.associate(sequelize.models);
+  Commune.associate(sequelize.models);
+  Family.associate(sequelize.models);
+  Category.associate(sequelize.models);
+}
+
+module.exports = setupModels;
